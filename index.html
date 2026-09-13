@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#081413">
+  <title>Snake / Field Notes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="masthead">
+      <div class="brand"><span class="brand-mark">+</span><span>FIELD / 01</span></div>
+      <div class="signal"><span class="signal-dot"></span> LIVE SESSION</div>
+    </header>
+
+    <section class="intro">
+      <div>
+        <p class="kicker">ARCADE STUDY <span>001</span></p>
+        <h1>CADEPLAY</h1>
+      </div>
+      <p class="intro-note">Guide the line.<br>Keep the field clear.</p>
+    </section>
+
+    <section class="game-layout" aria-label="Snake game">
+      <div class="board-wrap">
+        <div class="board-meta"><span>GRID 20 × 20</span><span id="status" aria-live="polite">READY</span></div>
+        <div class="canvas-frame">
+          <canvas id="game" width="600" height="600" aria-label="Snake game board"></canvas>
+          <div class="start-prompt" id="startPrompt">
+            <span class="prompt-icon">↑</span>
+            <span>PRESS AN ARROW<br>TO BEGIN</span>
+          </div>
+        </div>
+      </div>
+
+      <aside class="side-panel">
+        <div class="score-card">
+          <span class="label">CURRENT SCORE</span>
+          <strong id="score">00</strong>
+          <span class="score-rule"></span>
+          <span class="best">BEST <b id="best">00</b></span>
+        </div>
+        <div class="guide">
+          <div class="section-label">FIELD NOTES</div>
+          <p>Collect the red markers. Every one makes you longer.</p>
+          <div class="controls" aria-label="Controls">
+            <button class="control up" data-direction="up" aria-label="Move up">↑</button>
+            <button class="control left" data-direction="left" aria-label="Move left">←</button>
+            <button class="control down" data-direction="down" aria-label="Move down">↓</button>
+            <button class="control right" data-direction="right" aria-label="Move right">→</button>
+          </div>
+          <div class="utility-controls">
+            <button class="utility" id="pauseButton" type="button" aria-label="Pause game">PAUSE</button>
+            <button class="utility" id="soundButton" type="button" aria-label="Mute sound" aria-pressed="false">SOUND ON</button>
+          </div>
+          <p class="small-note">ARROWS / WASD<br>P TO PAUSE · AUTO RESET</p>
+        </div>
+      </aside>
+    </section>
+
+    <footer><span>ONE MOVE AT A TIME</span><span>BOUNDARIES ARE FINAL</span></footer>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
